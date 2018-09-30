@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+#preloader{
+	margin-top: 650px;
+}
+
+.ui.inverted.dimmer .ui.loader:after {
+  border-color: #1cb5e0 transparent transparent !important ;
+}
