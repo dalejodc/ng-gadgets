@@ -1,13 +1,21 @@
-# Angular 6 + MaterializeCSS
-Proyecto inicial de Angular 6 + MaterializeCSS + jQuery + Material Design Icons + SweetAlert2 + Animated.css 
+# Angular 6 + Firebase + SemanticUI
+Practical lesson covering Angular 6 + Firebase + SemanticUI
 
-![imagen](https://user-images.githubusercontent.com/36966980/44313453-5e8dbf00-a3c6-11e8-8337-a4dfb1e8c3e9.png)
+![image](https://user-images.githubusercontent.com/36966980/46382194-276a2900-c667-11e8-8771-d63504c808cc.png)
 
-## Descargar o clonar el proyecto
+## Download dependencies
 
-Luego de descargar el proyecto, ejecutar `npm install` para descargar todas las dependencias del proyecto. En algunas ocasiones es necesario ejecutar el comando con los permisos de Administrador.
+After downloading the project run inside the project folder `npm install`to download the dependencies.
 
-## Ejecutar la aplicación
+## Development server
 
-Ejecutar `ng serve -o` para correr la aplicación. Con el comando anterior, la aplicación se abrirá en una pestaña del navegador predeterminado. O navegar a `http://localhost:4200/`. 
+Run `ng serve --port 4200 -o` for a dev server, it will open automatically. Or navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
