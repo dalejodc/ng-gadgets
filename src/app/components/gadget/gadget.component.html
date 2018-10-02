@@ -2,30 +2,51 @@
 	<div class="ui stackable two column grid">
 		<div class="ui vertical divider"></div>
 		<div class="column">
-			<form class="ui form">
+			<form class="ui form" (ngSubmit)="save()" #gadgetForm="ngForm">
 				<div class="three fields">
 					<div class="field">
 						<label>Name</label>
-						<input type="text" placeholder="Device name">
+						<input 
+							type="text" 
+							placeholder="Device name" 
+							[(ngModel)]="gadget.name"
+							name="name"
+							required>
 					</div>
 					<div class="field">
 						<label>Brand</label>
-						<input type="text" placeholder="Devices's brand">
+						<input 
+							type="text" 
+							placeholder="Devices's brand" 
+							[(ngModel)]="gadget.brand"
+							name="brand"
+							required>
 					</div>
 					<div class="field">
 						<label>Price</label>
-						<input type="text" placeholder="Devices's price">
+						<input 
+							type="text" 
+							placeholder="Devices's price" 
+							[(ngModel)]="gadget.price"
+							name="price"
+							required>
 					</div>
 				</div>
 				<div class="field">
 					<label>Description</label>
-					<textarea rows="2" placeholder="Short description"></textarea>
+					<textarea 
+						rows="2" 
+						placeholder="Short description" 
+						[(ngModel)]="gadget.description"
+						name="description"
+						required>
+					</textarea>
 				</div>
 				<br>
 				<div class="ui center aligned three column grid">
 					<div class="row">
 						<div class="column">
-							<button class="ui button green" type="submit" >Submit</button>
+							<button class="ui button green" type="submit" [disabled]="!gadgetForm.valid">Submit</button>
 							<!-- [disabled]="!formExampleNestedObj.valid" -->
 						</div>
 					</div>
@@ -33,7 +54,10 @@
 			</form>
 		</div>
 		<div class="column ">
-			
+			{{gadgetForm.valid}}
+			<pre>
+				{{gadget | json}}
+			</pre>
 		</div>
 	</div>
 </div>
