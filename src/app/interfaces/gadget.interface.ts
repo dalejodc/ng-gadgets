@@ -3,5 +3,5 @@ export interface Gadget {
 	description: string;
 	brand: string;
 	price: number;
-	id$: string; //ID Firebase
+	id?: string; //ID Firebase
 }
