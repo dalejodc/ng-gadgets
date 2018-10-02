@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-gadgets',
-  templateUrl: './gadgets.component.html',
-  styleUrls: ['./gadgets.component.css']
+  templateUrl: './gadgets.component.html'
 })
 export class GadgetsComponent implements OnInit {
 
