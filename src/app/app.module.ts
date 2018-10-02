@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { GadgetsComponent } from './components/gadgets/gadgets.component';
 import { GadgetsEditComponent } from './components/gadgets-edit/gadgets-edit.component';
+import { GadgetComponent } from './components/gadget/gadget.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { GadgetsEditComponent } from './components/gadgets-edit/gadgets-edit.com
     HomeComponent,
     HeaderComponent,
     GadgetsComponent,
-    GadgetsEditComponent
+    GadgetsEditComponent,
+    GadgetComponent
   ],
   imports: [
     BrowserModule,
