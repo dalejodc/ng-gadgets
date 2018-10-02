@@ -7,8 +7,7 @@ import { APP_ROUTING } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-import { GadgetsComponent } from './components/gadgets/gadgets.component';
-import { GadgetsEditComponent } from './components/gadgets-edit/gadgets-edit.component';
+import { GadgetsComponent } from './components/gadget/gadgets.component';
 import { GadgetComponent } from './components/gadget/gadget.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { GadgetComponent } from './components/gadget/gadget.component';
     HomeComponent,
     HeaderComponent,
     GadgetsComponent,
-    GadgetsEditComponent,
     GadgetComponent
   ],
   imports: [
