@@ -20,6 +20,9 @@ export class GadgetComponent implements OnInit {
 		price: null
 	}
 
+	isNewGadtet: boolean = false;
+	id:string;
+
 	constructor(
 		private _gadgetService: GadgetService,
 		private _router: Router,
@@ -27,6 +30,7 @@ export class GadgetComponent implements OnInit {
 		) { }
 
 	ngOnInit() {
+		this.chooseFunction();
 	}
 
 	save(){
@@ -39,6 +43,29 @@ export class GadgetComponent implements OnInit {
 			error =>{
 				console.error(error);
 			});
+	}
+
+	edit(){
+		this._gadgetService.editGadget(this.gadget, this.id)
+			.subscribe(data=>{
+				this._router.navigate(['/gadgets']);
+			},
+			error =>{
+				console.error(error);
+			});
+	}
+
+	//This fucntion help to add or edit a gadget
+	chooseFunction(){
+		this._activatedRouter.params.subscribe(params=>{
+			this.id = params['id']
+
+			if(this.id == 'add'){
+				this.save();
+			}else{
+				this.edit();
+			}
+		})
 	}
 
 }
