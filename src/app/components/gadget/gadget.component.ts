@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms"
 import { Gadget } from "../../interfaces/gadget.interface";
 
+
 import { GadgetService } from "../../services/gadget.service";
 
 @Component({
@@ -18,13 +19,21 @@ export class GadgetComponent implements OnInit {
     price: null
   }
 
-  constructor() { }
+  constructor(private _gadgetService: GadgetService) { }
 
   ngOnInit() {
   }
 
   save(){
   	console.log(this.gadget);
+
+    this._gadgetService.addGadget(this.gadget)
+      .subscribe(data=>{
+
+      },
+      error =>{
+        console.error(error);
+      });
   }
 
 }
