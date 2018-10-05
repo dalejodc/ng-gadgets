@@ -29,4 +29,22 @@ export class GadgetService {
 				})
 			);
 	}
+
+	editGadget(gadget:Gadget, key$:string){
+
+		let newGadget = JSON.stringify(gadget);
+
+		let url = `${this.gadgestAPI}/${key$}.json` 
+		
+		let headers = new HttpHeaders({
+			'Content-Type': 'application/json'
+		});
+
+		return this.http.put(url, newGadget, {headers})
+			.pipe(map(res=>{
+				console.log(res);
+				return res;
+				})
+			);
+	}
 }

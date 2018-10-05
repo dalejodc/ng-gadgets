@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms"
-import { Router } from "@angular/router"
+import { Router, ActivatedRoute } from "@angular/router"
 import { Gadget } from "../../interfaces/gadget.interface";
 
 
@@ -22,7 +22,8 @@ export class GadgetComponent implements OnInit {
 
 	constructor(
 		private _gadgetService: GadgetService,
-		private _router: Router
+		private _router: Router,
+		private _activatedRouter: ActivatedRoute
 		) { }
 
 	ngOnInit() {
@@ -33,7 +34,7 @@ export class GadgetComponent implements OnInit {
 
 		this._gadgetService.addGadget(this.gadget)
 			.subscribe(data=>{
-				this._router.navigate(['/home']);
+				this._router.navigate(['/gadgets']);
 			},
 			error =>{
 				console.error(error);
