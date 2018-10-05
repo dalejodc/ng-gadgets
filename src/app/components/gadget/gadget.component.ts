@@ -13,9 +13,9 @@ export class GadgetComponent implements OnInit {
 
   gadget:Gadget = {
   	name: "",
-	description: "",
-	brand: "",
-	price: null
+    description: "",
+    brand: "",
+    price: null
   }
 
   constructor() { }
