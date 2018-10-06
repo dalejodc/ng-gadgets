@@ -10,10 +10,15 @@ import { map } from 'rxjs/operators';
 
 export class GadgetService {
 
-	gadgestAPI ="https://angular-gadgets.firebaseio.com/gadgets.json";
+	// gadgestAPI ="https://angular-gadgets.firebaseio.com/gadgets.json";
 	
 	constructor( private http:HttpClient) { }
 
+	
+	/*
+	Function to add a new gadget
+	POST
+	*/
 	addGadget(gadget:Gadget){
 
 		let newGadget = JSON.stringify(gadget);
@@ -22,7 +27,7 @@ export class GadgetService {
 			'Content-Type': 'application/json'
 		});
 
-		return this.http.post(this.gadgestAPI, newGadget, {headers})
+		return this.http.post('https://angular-gadgets.firebaseio.com/gadgets.json', newGadget, {headers})
 			.pipe(map(res=>{
 				console.log(res);
 				return res;
@@ -30,11 +35,13 @@ export class GadgetService {
 			);
 	}
 
+	/*
+	Function to edit a gadget
+	PUT 
+	*/
 	editGadget(gadget:Gadget, key$:string){
 
 		let newGadget = JSON.stringify(gadget);
-
-		let url = `${this.gadgestAPI}/${key$}.json` 
 		
 		let headers = new HttpHeaders({
 			'Content-Type': 'application/json'
@@ -48,18 +55,27 @@ export class GadgetService {
 			);
 	}
 
+	/*
+	Function to get all gadgets
+	GET
+	*/
 	getGadgets(){
 
 		let headers = new HttpHeaders({
 			'Content-Type': 'application/json'
 		});
 
-		return this.http.get(this.gadgestAPI, {headers})
+		return this.http.get('https://angular-gadgets.firebaseio.com/gadgets.json', {headers})
 					.pipe(map(res=>{
 						return res;
 					}))
 	}
 
+
+	/*
+	Function to get an especific gadgets by key$
+	GET
+	*/
 	getGadget(key$:string){
 
 		let url = `https://angular-gadgets.firebaseio.com/gadgets/${key$}.json` 
