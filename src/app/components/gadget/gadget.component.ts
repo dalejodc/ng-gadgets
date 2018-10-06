@@ -13,6 +13,7 @@ import { GadgetService } from "../../services/gadget.service";
 })
 export class GadgetComponent implements OnInit {
 
+	// Object
 	gadget:Gadget = {
 		name: "",
 		description: "",
@@ -20,7 +21,6 @@ export class GadgetComponent implements OnInit {
 		price: null
 	}
 
-	isNewGadtet: boolean = false;
 	id:string;
 
 	constructor(
@@ -30,17 +30,44 @@ export class GadgetComponent implements OnInit {
 		) { }
 
 	ngOnInit() {
-		// this.chooseFunction();
+		// Catch the params of the url
 		this._activatedRouter.params.subscribe(
 			params=>{
 				this.id = params['id']
 		});
 
+		// Check the param. If is different to 'add'; it means that is route to edit, so it gets the specific gadget
 		if(this.id != 'add'){
 			this.getGadget();
 		}
 	}
 
+	// Get the gadget by key$ gotten by params. Init the gadget with the request
+	getGadget(){
+		this._gadgetService.getGadget(this.id).subscribe(
+			data=>{
+				console.log(data);
+				this.gadget = data;
+			}, 
+			error=>{
+				console.log(error);
+			});
+	}
+
+	
+
+	// Send the object with the key$
+	edit(){
+		this._gadgetService.editGadget(this.gadget, this.id)
+			.subscribe(data=>{
+				this._router.navigate(['/gadgets']);
+			},
+			error =>{
+				console.error(error);
+			});
+	}
+
+	//Save the gadget
 	save(){
 
 		if(this.id != 'add'){
@@ -56,41 +83,6 @@ export class GadgetComponent implements OnInit {
 			});
 		}
 		
-	}
-
-	edit(){
-		console.log("Updating...", this.gadget, this.id);
-		this._gadgetService.editGadget(this.gadget, this.id)
-			.subscribe(data=>{
-				this._router.navigate(['/gadgets']);
-			},
-			error =>{
-				console.error(error);
-			});
-	}
-
-	getGadget(){
-		this._gadgetService.getGadget(this.id).subscribe(
-			data=>{
-				console.log(data);
-				this.gadget = data;
-			}, 
-			error=>{
-				console.log(error);
-			});
-	}
-
-	//This fucntion help to add or edit a gadget
-	chooseFunction(){
-		this._activatedRouter.params.subscribe(params=>{
-			this.id = params['id']
-
-			if(this.id != 'add'){
-				this.edit();
-			}else{
-				this.save();
-			}
-		})
 	}
 
 }
