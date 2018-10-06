@@ -76,7 +76,7 @@ export class GadgetService {
 	GET
 	*/
 	deleteGadget(key$:string){
-		return this.http.delete(`https://angular-gadgets.firebaseio.com/gadgets/${key$}`)
+		return this.http.delete(`https://angular-gadgets.firebaseio.com/gadgets/${key$}.json`)
 					.pipe(map(res=>{
 						return res;
 					}))

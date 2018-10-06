@@ -22,6 +22,8 @@ export class GadgetsComponent implements OnInit {
 	}
 
 	getGadgets(){
+		this.gadgets = [];
+
 		this._gadgetService.getGadgets().subscribe(
 			data=>{
 				// Building an array from Firebase 
@@ -41,8 +43,16 @@ export class GadgetsComponent implements OnInit {
 		this._router.navigate(['/gadget', key$])
 	}
 
-	deleteGadget(){
-		
+	deleteGadget(key$:string){
+		this._gadgetService.deleteGadget(key$).subscribe(
+			success=>{
+				console.log("Done!");
+				this.getGadgets();
+			}, 
+			error=>{
+				console.error(error);
+			}
+			);
 	}
 
 }

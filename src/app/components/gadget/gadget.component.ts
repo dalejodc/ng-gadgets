@@ -22,7 +22,7 @@ export class GadgetComponent implements OnInit {
 	}
 
 	id:string;
-s
+	
 	constructor(
 		private _gadgetService: GadgetService,
 		private _router: Router,
