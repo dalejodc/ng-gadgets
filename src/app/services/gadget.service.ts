@@ -47,4 +47,16 @@ export class GadgetService {
 				})
 			);
 	}
+
+	getGadgets(){
+
+		let headers = new HttpHeaders({
+			'Content-Type': 'application/json'
+		});
+
+		return this.http.get(this.gadgestAPI, {headers})
+					.pipe(map(res=>{
+						return res;
+					}))
+	}
 }
