@@ -9,7 +9,7 @@ import { Gadget } from '../../interfaces/gadget.interface';
 })
 export class GadgetsComponent implements OnInit {
 
-	gadgets:any[] = [];
+	gadgets: any[]=[];
 
 	constructor(private _gadgetService:GadgetService) { }
 
@@ -18,15 +18,16 @@ export class GadgetsComponent implements OnInit {
 	}
 
 	getGadgets(){
-		this._gadgetService.getGadgets()
-			.subscribe(
-				data=>{
-					console.log(data);
-					this.gadgets = data;
+		this._gadgetService.getGadgets().subscribe(
+			data=>{
+				// Building an array from Firebase 
+				for(let key$ in data){
+					this.gadgets.push(data[key$]);
+				}
 
-			}, error=>{
-				console.error(error);
-			})
+		}, error=>{
+			console.error(error);
+		})
 	}
 
 }

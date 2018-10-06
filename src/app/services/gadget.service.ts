@@ -59,4 +59,20 @@ export class GadgetService {
 						return res;
 					}))
 	}
+
+	getGadget(key$:string){
+
+		let url = `${this.gadgestAPI}/gadgets/${key$}.json` 
+		
+		let headers = new HttpHeaders({
+			'Content-Type': 'application/json'
+		});
+
+		return this.http.get(this.gadgestAPI)
+					.pipe(
+						map(res=>{
+							return res;
+						})
+					)
+	}
 }
