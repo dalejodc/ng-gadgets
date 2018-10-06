@@ -35,7 +35,7 @@
 				<td data-label="Job" width="100px">{{gadget.price | currency}}</td>
 				<td data-label="Job" class="center aligned">
 					<button class="ui red button">Delete</button>
-					<button class="ui primary button" (click)="editGadget()">Edit</button>
+					<button class="ui primary button" (click)="editGadget(gadget.key$)">Edit</button>
 				</td>
 			</tr>
 		</tbody>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { GadgetService } from '../../services/gadget.service';
 import { Gadget } from '../../interfaces/gadget.interface';
@@ -11,7 +12,10 @@ export class GadgetsComponent implements OnInit {
 
 	gadgets: any[]=[];
 
-	constructor(private _gadgetService:GadgetService) { }
+	constructor(
+		private _gadgetService:GadgetService,
+		private _router:Router
+		) { }
 
 	ngOnInit() {
 		this.getGadgets();
@@ -22,12 +26,19 @@ export class GadgetsComponent implements OnInit {
 			data=>{
 				// Building an array from Firebase 
 				for(let key$ in data){
+					let h = data[key$];
+					h.key$ = key$; 
 					this.gadgets.push(data[key$]);
 				}
+				console.log(this.gadgets);
 
 		}, error=>{
 			console.error(error);
 		})
+	}
+
+	editGadget(key$:string){
+		this._router.navigate(['/gadget', key$])
 	}
 
 }

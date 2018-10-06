@@ -40,7 +40,7 @@ export class GadgetService {
 			'Content-Type': 'application/json'
 		});
 
-		return this.http.put(url, newGadget, {headers})
+		return this.http.put(`https://angular-gadgets.firebaseio.com/gadgets/${key$}.json`, newGadget, {headers})
 			.pipe(map(res=>{
 				console.log(res);
 				return res;
@@ -62,13 +62,14 @@ export class GadgetService {
 
 	getGadget(key$:string){
 
-		let url = `${this.gadgestAPI}/gadgets/${key$}.json` 
+		let url = `https://angular-gadgets.firebaseio.com/gadgets/${key$}.json` 
+		console.log(url);
 		
 		let headers = new HttpHeaders({
 			'Content-Type': 'application/json'
 		});
 
-		return this.http.get(this.gadgestAPI)
+		return this.http.get(url)
 					.pipe(
 						map(res=>{
 							return res;
