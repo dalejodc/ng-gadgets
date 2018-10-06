@@ -1,9 +1,9 @@
 <br>
 <div class="ui container">
 
-	<div class="ui right aligned grid">
+	<div class="ui left aligned grid">
 		<div class="right floated column">
-			<button class="ui green button" [routerLink]="['/gadget','add']">Add</button>
+			<button class="ui green button" [routerLink]="['/gadget','add']">Add Gadget</button>
 		</div>
 	</div>
 
@@ -18,11 +18,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td data-label="Name" width="200px">iPhone XS</td>
-				<td data-label="Name">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro obcaecati laudantium aut alias, repudiandae cupiditate odit facere et assumenda non?</td>
-				<td data-label="Age" width="100px">Apple</td>
-				<td data-label="Job" width="100px">$ 1,500</td>
+			<tr *ngFor="let x of gadgets | keys">
+				<td data-label="Name" width="200px">{{gadgets[x].name}}</td>
+				<td data-label="Name">{{gadgets[x].description}}</td>
+				<td data-label="Age" width="100px">{{gadgets[x].brand}}</td>
+				<td data-label="Job" width="100px">{{gadgets[x].price | currency}}</td>
 				<td data-label="Job" class="center aligned">
 					<button class="ui red button">Delete</button>
 					<button class="ui primary button">Edit</button>
@@ -30,4 +30,5 @@
 			</tr>
 		</tbody>
 	</table>
+
 </div>

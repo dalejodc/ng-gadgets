@@ -9,7 +9,7 @@ import { Gadget } from '../../interfaces/gadget.interface';
 })
 export class GadgetsComponent implements OnInit {
 
-	gadgets: any;
+	gadgets:any[] = [];
 
 	constructor(private _gadgetService:GadgetService) { }
 
@@ -18,13 +18,15 @@ export class GadgetsComponent implements OnInit {
 	}
 
 	getGadgets(){
-		this._gadgetService.getGadgets().subscribe(data=>{
-			console.log(data);
-			this.gadgets = data;
-			console.log(this.gadgets);
-		}, error=>{
-			console.error(error);
-		})
+		this._gadgetService.getGadgets()
+			.subscribe(
+				data=>{
+					console.log(data);
+					this.gadgets = data;
+
+			}, error=>{
+				console.error(error);
+			})
 	}
 
 }

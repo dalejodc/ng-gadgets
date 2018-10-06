@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { GadgetsComponent } from './components/gadget/gadgets.component';
 import { GadgetComponent } from './components/gadget/gadget.component';
+import { KeysPipe } from './pipes/keys.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GadgetComponent } from './components/gadget/gadget.component';
     HomeComponent,
     HeaderComponent,
     GadgetsComponent,
-    GadgetComponent
+    GadgetComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,

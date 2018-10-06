@@ -30,7 +30,7 @@ export class GadgetComponent implements OnInit {
 		) { }
 
 	ngOnInit() {
-		this.chooseFunction();
+		// this.chooseFunction();
 	}
 
 	save(){
