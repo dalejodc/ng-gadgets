@@ -14,7 +14,7 @@ import { GadgetService } from "../../services/gadget.service";
 export class GadgetComponent implements OnInit {
 
 	// Object
-	gadget:Gadget = {
+	gadget:any = {
 		name: "",
 		description: "",
 		brand: "",
@@ -22,7 +22,7 @@ export class GadgetComponent implements OnInit {
 	}
 
 	id:string;
-
+s
 	constructor(
 		private _gadgetService: GadgetService,
 		private _router: Router,

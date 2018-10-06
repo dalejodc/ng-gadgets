@@ -18,26 +18,18 @@
 			</tr>
 		</thead>
 		<tbody>
-			<!-- <tr *ngFor="let x of gadgets | keys">
-				<td data-label="Name" width="200px">{{gadgets[x].name}}</td>
-				<td data-label="Name">{{gadgets[x].description}}</td>
-				<td data-label="Age" width="100px">{{gadgets[x].brand}}</td>
-				<td data-label="Job" width="100px">{{gadgets[x].price | currency}}</td>
-				<td data-label="Job" class="center aligned">
-					<button class="ui red button">Delete</button>
-					<button class="ui primary button" [routerLink]="['/gadget/', ]">Edit</button>
-				</td>
-			</tr>-->
+
 			<tr *ngFor="let gadget of gadgets">
 				<td data-label="Name" width="200px">{{gadget.name}}</td>
 				<td data-label="Name">{{gadget.description}}</td>
 				<td data-label="Age" width="100px">{{gadget.brand}}</td>
 				<td data-label="Job" width="100px">{{gadget.price | currency}}</td>
 				<td data-label="Job" class="center aligned">
-					<button class="ui red button">Delete</button>
+					<button class="ui red button" (click)="deleteGadget(gadget.key$)">Delete</button>
 					<button class="ui primary button" (click)="editGadget(gadget.key$)">Edit</button>
 				</td>
 			</tr>
+
 		</tbody>
 	</table>
 

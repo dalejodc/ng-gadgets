@@ -41,4 +41,8 @@ export class GadgetsComponent implements OnInit {
 		this._router.navigate(['/gadget', key$])
 	}
 
+	deleteGadget(){
+		
+	}
+
 }

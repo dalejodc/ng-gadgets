@@ -71,6 +71,17 @@ export class GadgetService {
 					}))
 	}
 
+	/*
+	Function to get all gadgets
+	GET
+	*/
+	deleteGadget(key$:string){
+		return this.http.delete(`https://angular-gadgets.firebaseio.com/gadgets/${key$}`)
+					.pipe(map(res=>{
+						return res;
+					}))
+	}
+
 
 	/*
 	Function to get an especific gadgets by key$
