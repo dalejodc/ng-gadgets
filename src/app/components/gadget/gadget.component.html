@@ -18,7 +18,7 @@
 
 						<div class="ui negative message" *ngIf="(!name.valid && name.touched)">
 							<div class="header">
-								Error in device name!
+								Error in device name field!
 							</div>
 							<ul>
 								<li *ngIf="name.errors?.required">This field is required</li>
@@ -40,7 +40,7 @@
 
 						<div class="ui negative message" *ngIf="(!brand.valid && brand.touched)">
 							<div class="header">
-								Error in brand name!
+								Error in device brand field!
 							</div>
 							<ul>
 								<li *ngIf="brand.errors?.required">This field is required</li>
@@ -62,7 +62,7 @@
 
 						<div class="ui negative message" *ngIf="(!price.valid && price.touched)">
 							<div class="header">
-								Error in price name!
+								Error in device price field!
 							</div>
 							<ul>
 								<li *ngIf="price.errors?.pattern">You must type numbers.</li>
@@ -78,8 +78,18 @@
 					placeholder="Short description" 
 					[(ngModel)]="gadget.description"
 					name="description"
+					#desccription = "ngModel"
 					required>
 				</textarea>
+
+				<div class="ui negative message" *ngIf="(!desccription.valid && desccription.touched)">
+					<div class="header">
+						Error in device desccription field!
+					</div>
+					<ul>
+						<li *ngIf="desccription.errors?.required">This field is required</li>
+					</ul>
+				</div>
 			</div>
 			<br>
 			<div class="ui center aligned three column grid">
@@ -90,7 +100,6 @@
 					</div>
 				</div>
 			</div>
-			{{gadgetForm.status}}
 		</form>
 	</div>
 	<div class="column ">
