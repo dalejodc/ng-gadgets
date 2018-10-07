@@ -4,5 +4,31 @@
 }
 
 .ui.inverted.dimmer .ui.loader:after {
-  border-color: #1cb5e0 transparent transparent !important ;
+	border-color: #1cb5e0 transparent transparent !important ;
+}
+
+.section {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.section.no-pad-bot {
+	padding-bottom: 0;
+	margin-bottom: 60px;
+}
+
+
+#banner-top{
+	color: white;
+	background: #0d47a1;
+	border-bottom: 20px solid #1565c0;
+	padding-top: 50px;
+}
+
+.white-text{
+	color:white !important;
+}
+
+#main{
+	font-size: 60px !important;
 }

@@ -1,6 +1,13 @@
-<div class="ui container">
+<div class="section no-pad-bot animated fadeIn" id="banner-top">
+	<div class="ui container center aligned">
+		<h1 class="ui header white-text" id="main">{{title}}</h1>
+		<br>
+	</div>
+</div>
+
+<div class="ui container animated fadeIn">
 	<div class="ui stackable two column grid">
-		<div class="ui vertical divider" style="height: 50%;"></div>
+		<!-- <div class="ui vertical divider" style="height: 50%;"></div> -->
 		<div class="column">
 			<form class="ui form" (ngSubmit)="save(gadgetForm)" #gadgetForm="ngForm">
 				<div class="three fields">
@@ -95,18 +102,14 @@
 			<div class="ui center aligned three column grid">
 				<div class="row">
 					<div class="column">
-						<button class="ui button green" type="submit">Submit</button>
-						<!-- [disabled]="!formExampleNestedObj.valid" -->
+						<button class="ui button green" type="submit" [disabled]="!gadgetForm.valid">Submit</button>
 					</div>
 				</div>
 			</div>
 		</form>
 	</div>
 	<div class="column ">
-		{{gadgetForm.valid}}
-		<pre>
-			{{gadget | json}}
-		</pre>
+		
 	</div>
 </div>
 </div>

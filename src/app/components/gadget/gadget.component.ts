@@ -22,6 +22,7 @@ export class GadgetComponent implements OnInit {
 	}
 
 	id:string;
+	title:string="Add gadget";
 	
 	constructor(
 		private _gadgetService: GadgetService,
@@ -38,6 +39,7 @@ export class GadgetComponent implements OnInit {
 
 		// Check the param. If is different to 'add'; it means that is route to edit, so it gets the specific gadget
 		if(this.id != 'add'){
+			this.title ="Edit gadget"
 			this.getGadget();
 		}
 	}
@@ -70,19 +72,20 @@ export class GadgetComponent implements OnInit {
 	//Save the gadget
 	save(gadgetForm){
 
-		console.log(gadgetForm);
-		// if(this.id != 'add'){
-		// 	this.edit();
-		// }else{
-		// 	this._gadgetService.addGadget(this.gadget)
-		// 	.subscribe(
-		// 		data=>{
-		// 			this._router.navigate(['/gadgets']);
-		// 		},
-		// 		error =>{
-		// 			console.error(error);
-		// 	});
-		// }
+		// console.log(gadgetForm);
+		
+		if(this.id != 'add'){
+			this.edit();
+		}else{
+			this._gadgetService.addGadget(this.gadget)
+			.subscribe(
+				data=>{
+					this._router.navigate(['/gadgets']);
+				},
+				error =>{
+					console.error(error);
+			});
+		}
 		
 	}
 
