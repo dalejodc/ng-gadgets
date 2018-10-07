@@ -68,20 +68,21 @@ export class GadgetComponent implements OnInit {
 	}
 
 	//Save the gadget
-	save(){
+	save(gadgetForm){
 
-		if(this.id != 'add'){
-			this.edit();
-		}else{
-			this._gadgetService.addGadget(this.gadget)
-			.subscribe(
-				data=>{
-					this._router.navigate(['/gadgets']);
-				},
-				error =>{
-					console.error(error);
-			});
-		}
+		console.log(gadgetForm);
+		// if(this.id != 'add'){
+		// 	this.edit();
+		// }else{
+		// 	this._gadgetService.addGadget(this.gadget)
+		// 	.subscribe(
+		// 		data=>{
+		// 			this._router.navigate(['/gadgets']);
+		// 		},
+		// 		error =>{
+		// 			console.error(error);
+		// 	});
+		// }
 		
 	}
 
