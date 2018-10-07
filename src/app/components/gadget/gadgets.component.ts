@@ -12,6 +12,7 @@ import { Gadget } from '../../interfaces/gadget.interface';
 export class GadgetsComponent implements OnInit {
 
 	gadgets: any[]=[];
+	budget: number=0;
 
 	constructor(
 		private _gadgetService:GadgetService,
@@ -34,11 +35,22 @@ export class GadgetsComponent implements OnInit {
 					this.gadgets.push(data[key$]);
 				}
 				console.log(this.gadgets);
+				this.getBudget();
 
 			}, error=>{
 				console.error(error);
 			})
 	}
+
+	getBudget(){
+		this.budget =0;
+		
+		for (var i = 0; i < this.gadgets.length; i++) {
+			this.budget += parseFloat(this.gadgets[i].price);
+			console.log(this.budget);
+		}
+	}
+	
 
 	editGadget(key$:string){
 		this._router.navigate(['/gadget', key$])

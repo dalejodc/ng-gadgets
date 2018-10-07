@@ -53,12 +53,29 @@
 					<button class="ui primary button" (click)="editGadget(gadget.key$)">Edit</button>
 				</td>
 			</tr>
-
 		</tbody>
 	</table>
 
 	<br>
 
+	<div class="ui large steps right">
+		<div class="step">
+			<i class="mobile alternate icon"></i>
+			<div class="content">
+				<div class="title">{{gadgets.length}}</div>
+				<div class="description">Total devices</div>
+			</div>
+		</div>
+		<div class="step">
+			<i class="dollar icon"></i>
+			<div class="content">
+				<div class="title">{{budget | currency}}</div>
+				<div class="description">Total sum of the devices</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	
 	<div class="ui divider"></div>
 
 </div>
