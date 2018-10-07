@@ -6,7 +6,7 @@
 </div>
 
 
-<div class="ui container animated fadeIn">
+<div class="ui container animated fadeIn mar-bot">
 
 	
 
@@ -31,7 +31,8 @@
 	<table class="ui celled table ">
 		<thead>
 			<tr>
-				<th>Gadtet</th>
+				<th class="center aligned">#</th>
+				<th>Gadget</th>
 				<th>Description</th>
 				<th>Brand</th>
 				<th>Price</th>
@@ -40,12 +41,13 @@
 		</thead>
 		<tbody>
 
-			<tr *ngFor="let gadget of gadgets">
-				<td data-label="Name" width="200px">{{gadget.name}}</td>
-				<td data-label="Name">{{gadget.description}}</td>
-				<td data-label="Age" width="100px">{{gadget.brand}}</td>
-				<td data-label="Job" width="100px">{{gadget.price | currency}}</td>
-				<td data-label="Job" class="center aligned">
+			<tr *ngFor="let gadget of gadgets; let i = index">
+				<td width="50px" class="center aligned">{{i+1}}</td>
+				<td width="200px">{{gadget.name}}</td>
+				<td>{{gadget.description}}</td>
+				<td width="100px">{{gadget.brand}}</td>
+				<td width="100px">{{gadget.price | currency}}</td>
+				<td class="center aligned">
 					<button class="ui red button" (click)="deleteGadget(gadget.key$)">Delete</button>
 					<button class="ui primary button" (click)="editGadget(gadget.key$)">Edit</button>
 				</td>
