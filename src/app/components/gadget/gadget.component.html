@@ -49,14 +49,26 @@
 					</div>
 					
 					<!-- Price Field -->
-					<div class="field">
+					<div class="required field">
 						<label>Price</label>
 						<input 
 						type="text" 
 						placeholder="Devices's price" 
 						[(ngModel)]="gadget.price"
+						#price ="ngModel"
 						name="price"
+						pattern='[0-9]+(\.[0-9][0-9]?)?'
 						required>
+
+						<div class="ui negative message" *ngIf="(!price.valid && price.touched)">
+							<div class="header">
+								Error in price name!
+							</div>
+							<ul>
+								<li *ngIf="price.errors?.pattern">You must type numbers.</li>
+								<li *ngIf="price.errors?.pattern">Example: 90.99</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 				<div class="field">
