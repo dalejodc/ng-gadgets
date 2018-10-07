@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import swal from 'sweetalert2'
+import swal from 'sweetalert2';
 
 import { GadgetService } from '../../services/gadget.service';
 import { Gadget } from '../../interfaces/gadget.interface';
@@ -60,20 +60,20 @@ export class GadgetsComponent implements OnInit {
 			if (result.value) {
 				this._gadgetService.deleteGadget(gadget.key$).subscribe(
 					success=>{
-							console.log("Done!");
-							this.getGadgets();
+						console.log("Done!");
+						this.getGadgets();
 
-							swal(
+						swal(
 							'Deleted!',
 							'Your file has been deleted.',
 							'success'
 							)
-						}, 
-						error=>{
-								console.error(error);
-							});
-					}
-				});
+					}, 
+					error=>{
+						console.error(error);
+					});
+			}
+		});
 	}
 
 }
