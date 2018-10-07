@@ -23,6 +23,7 @@ export class GadgetComponent implements OnInit {
 
 	id:string;
 	title:string="Add gadget";
+	option:string="Add";
 	
 	constructor(
 		private _gadgetService: GadgetService,
@@ -40,6 +41,7 @@ export class GadgetComponent implements OnInit {
 		// Check the param. If is different to 'add'; it means that is route to edit, so it gets the specific gadget
 		if(this.id != 'add'){
 			this.title ="Edit gadget"
+			this.option ="Edit"
 			this.getGadget();
 		}
 	}

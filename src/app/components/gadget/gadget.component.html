@@ -6,6 +6,19 @@
 </div>
 
 <div class="ui container animated fadeIn">
+	
+	<div class="ui right aligned grid">
+		<div class="right floated column">
+			<div class="ui small breadcrumb">
+				<a class="section" [routerLink]="['/home']">Home</a>
+				<i class="right chevron icon divider"></i>
+				<a class="section" [routerLink]="['/gadgets']">Gadgets</a>
+				<i class="right chevron icon divider"></i>
+				<div class="active section">{{option}}</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="ui stackable two column grid">
 		<!-- <div class="ui vertical divider" style="height: 50%;"></div> -->
 		<div class="column">
