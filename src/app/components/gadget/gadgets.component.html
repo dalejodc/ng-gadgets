@@ -49,7 +49,7 @@
 				<td width="100px">{{gadget.brand}}</td>
 				<td width="100px">{{gadget.price | currency}}</td>
 				<td class="center aligned">
-					<button class="ui red button" (click)="deleteGadget(gadget.key$)">Delete</button>
+					<button class="ui red button" (click)="deleteGadget(gadget)">Delete</button>
 					<button class="ui primary button" (click)="editGadget(gadget.key$)">Edit</button>
 				</td>
 			</tr>

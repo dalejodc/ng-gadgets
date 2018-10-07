@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2'
 
 import { GadgetService } from '../../services/gadget.service';
 import { Gadget } from '../../interfaces/gadget.interface';
@@ -34,25 +35,45 @@ export class GadgetsComponent implements OnInit {
 				}
 				console.log(this.gadgets);
 
-		}, error=>{
-			console.error(error);
-		})
+			}, error=>{
+				console.error(error);
+			})
 	}
 
 	editGadget(key$:string){
 		this._router.navigate(['/gadget', key$])
 	}
 
-	deleteGadget(key$:string){
-		this._gadgetService.deleteGadget(key$).subscribe(
-			success=>{
-				console.log("Done!");
-				this.getGadgets();
-			}, 
-			error=>{
-				console.error(error);
-			}
-			);
+	deleteGadget(gadget){
+
+		swal({
+			title: `Do you want to delete the gadget ${gadget.name}?`,
+			animation: false,
+			customClass: 'animated fadeIn',
+			text: "You won't be able to revert this!",
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#e53935 ',
+			cancelButtonColor: '#bdbdbd',
+			confirmButtonText: 'Yes, delete it!'
+		}).then((result) => {
+			if (result.value) {
+				this._gadgetService.deleteGadget(gadget.key$).subscribe(
+					success=>{
+							console.log("Done!");
+							this.getGadgets();
+
+							swal(
+							'Deleted!',
+							'Your file has been deleted.',
+							'success'
+							)
+						}, 
+						error=>{
+								console.error(error);
+							});
+					}
+				});
 	}
 
 }
