@@ -21,8 +21,16 @@
 	margin-top: 50px !important; 
 }
 
+.pad-top{
+	padding-top: 50px !important; 
+}
+
 .mar-bot{
 	margin-bottom: 70px !important; 
+}
+
+.pad-bot{
+	padding-bottom: 70px !important; 
 }
 
 
@@ -44,4 +52,14 @@
 
 .yellow-color{
 	color: #ffca28 ;
+}
+
+.bold{
+	font-weight: 700;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
 }
