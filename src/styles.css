@@ -17,6 +17,14 @@
 	margin-bottom: 60px;
 }
 
+.mar-top{
+	margin-top: 50px !important; 
+}
+
+.mar-bot{
+	margin-bottom: 70px !important; 
+}
+
 
 #banner-top{
 	color: white;
@@ -31,4 +39,9 @@
 
 #main{
 	font-size: 55px !important;
+}
+
+
+.yellow-color{
+	color: #ffca28 ;
 }

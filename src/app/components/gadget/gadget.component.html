@@ -19,9 +19,10 @@
 		</div>
 	</div>
 
-	<div class="ui stackable two column grid">
+	<div class="ui stackable two column grid mar-top mar-bot">
+	
 		<!-- <div class="ui vertical divider" style="height: 50%;"></div> -->
-		<div class="column">
+		<div class="column animated bounceInLeft">
 			<form class="ui form" (ngSubmit)="save(gadgetForm)" #gadgetForm="ngForm">
 				<div class="three fields">
 					
@@ -121,9 +122,22 @@
 			</div>
 		</form>
 	</div>
-	<div class="column ">
-		
+
+	<div class="column center aligned">
+		<div class="eight wide column">
+			<h2 class="ui header">
+				Feel free to add your favorites <span class="yellow-color">gadgets</span>!
+				<div class="sub header">Add the name, brand, price and description of your gadget.</div>
+			</h2>
+			<div class="animated bounceInRight">
+				<br>
+				<br>
+				<img src="../../../assets/gadget.png" width="40%">
+			</div>
+		</div> 
 	</div>
+	
+	
 </div>
 </div>
 
