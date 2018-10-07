@@ -20,7 +20,7 @@
 	</div>
 
 	<div class="ui stackable two column grid mar-top mar-bot">
-	
+
 		<!-- <div class="ui vertical divider" style="height: 50%;"></div> -->
 		<div class="column animated bounceInLeft">
 			<form class="ui form" (ngSubmit)="save(gadgetForm)" #gadgetForm="ngForm">
@@ -113,13 +113,14 @@
 				</div>
 			</div>
 			<br>
-			<div class="ui center aligned three column grid">
-				<div class="row">
-					<div class="column">
-						<button class="ui button green" type="submit" [disabled]="!gadgetForm.valid">Submit</button>
-					</div>
+			
+			<div class="ui right aligned grid">
+				<div class="right floated left aligned six wide column">
+				<div class="ui button" tabindex="0" [routerLink]="['/gadgets']">Cancel</div>
+				<button class="ui button green" type="submit" [disabled]="!gadgetForm.valid">Submit</button>
 				</div>
 			</div>
+
 		</form>
 	</div>
 
@@ -136,8 +137,8 @@
 			</div>
 		</div> 
 	</div>
-	
-	
+
+
 </div>
 </div>
 
