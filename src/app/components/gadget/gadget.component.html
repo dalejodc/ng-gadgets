@@ -4,6 +4,7 @@
 		<div class="column">
 			<form class="ui form" (ngSubmit)="save(gadgetForm)" #gadgetForm="ngForm">
 				<div class="three fields">
+					
 					<!-- Name Field -->
 					<div class="required field">
 						<label>Name</label>
@@ -15,26 +16,39 @@
 						#name="ngModel"
 						required>
 
-					<div class="ui negative message" *ngIf="(!name.valid && name.touched)">
-						<div class="header">
-							Error in device name!
+						<div class="ui negative message" *ngIf="(!name.valid && name.touched)">
+							<div class="header">
+								Error in device name!
+							</div>
+							<ul>
+								<li *ngIf="name.errors?.required">This field is required</li>
+							</ul>
 						</div>
-						<ul>
-							<li *ngIf="name.errors?.required">This field is required</li>
-						</ul>
-					</div>
-
 
 					</div>
-					<div class="field">
+					
+					<!-- Brand Field -->
+					<div class="required field">
 						<label>Brand</label>
 						<input 
 						type="text" 
 						placeholder="Devices's brand" 
 						[(ngModel)]="gadget.brand"
 						name="brand"
+						#brand="ngModel"
 						required>
+
+						<div class="ui negative message" *ngIf="(!brand.valid && brand.touched)">
+							<div class="header">
+								Error in brand name!
+							</div>
+							<ul>
+								<li *ngIf="brand.errors?.required">This field is required</li>
+							</ul>
+						</div>
 					</div>
+					
+					<!-- Price Field -->
 					<div class="field">
 						<label>Price</label>
 						<input 
