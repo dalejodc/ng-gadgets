@@ -27,12 +27,23 @@
 	color: white;
 }
 
+#title-mobile{
+	font-size: 54px;
+	color: white;
+}
+
+#subtitle-mobile{
+	font-size: 20px;
+	font-weight: 200;
+	color: white;
+}
+
 .plus{
 	color: #ffca28 ;
 }
 
 #img-header{
-	margin-top: 60px;
+	margin-top: 30px;
 }
 
 #header-button{
