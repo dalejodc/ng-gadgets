@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { GadgetsComponent } from './components/gadget/gadgets.component';
 import { GadgetComponent } from './components/gadget/gadget.component';
 import { KeysPipe } from './pipes/keys.pipe';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { KeysPipe } from './pipes/keys.pipe';
     HeaderComponent,
     GadgetsComponent,
     GadgetComponent,
-    KeysPipe
+    KeysPipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+.full-width-gadget {
+	height: 68%;
+	min-height: 66vh;
+	margin-bottom: 0px;
+}
+
 #preloader{
 	margin-top: 650px;
 }
@@ -59,9 +66,9 @@
 }
 
 .container {
-  margin: 0 auto;
-  max-width: 1280px;
-  width: 90%;
+	margin: 0 auto;
+	max-width: 1280px;
+	width: 90%;
 }
 
 @media only screen and (max-width: 992px) {
@@ -72,7 +79,7 @@
 
 
 @media only screen and (min-width: 993px) {
-  .hide-on-large-only {
-    display: none !important;
-  }
+	.hide-on-large-only {
+		display: none !important;
+	}
 }
