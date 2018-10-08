@@ -21,9 +21,20 @@
 		</div>
 	</div>
 
-	<div class="ui left aligned grid">
-		<div class="right floated column">
-			<button class="ui green button" [routerLink]="['/gadget','add']">Add Gadget</button>
+	<div class="ui grid">
+		<div class="two column row">
+			<div class="left floated column">
+				<button class="ui green button" [routerLink]="['/gadget','add']" [disabled]="isListFull">Add Gadget</button>
+				<div class="ui icon error message" *ngIf="isListFull">
+					<i class="battery full icon"></i>
+					<div class="content">
+						<div class="header">
+							The gadget's list is full!
+						</div>
+						<p>Please delete some gadget to add more.</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -87,10 +98,11 @@
 			<p>A gadget is a small mechanical or electronic device or tool, especially an ingenious or novel one</p>
 			<h2 class="ui header pad-top white-text">
 				Add gadgets or tech devices!
-				<div class="sub header">You still can add <span class="bold">{{10-gadgets.length}}</span> gadgets.</div>
+				<div class="sub header" *ngIf="!isListFull">You still can add <span class="bold">{{5-gadgets.length}}</span> gadgets.</div>
+				<div class="sub header" *ngIf="isListFull">Actually, the gadget's list is full. Please delete some gadget to add more.</div>
 			</h2>
 
-			<p>Feel free to add your <span class="yellow-color bold">top ten</span> favorites gadgets. Type the name, brand, price and description of the gadget; all the fields are requireds.</p>
+			<p>Feel free to add your <span class="yellow-color bold">top five</span> favorites gadgets. Type the name, brand, price and description of the gadget; all the fields are requireds.</p>
 
 		</div>
 	</div>
@@ -112,6 +124,6 @@
 		<br>
 		<br>
 
-		<button class="ui secondary button" [routerLink]="['/gadget','add']">Add Gadget</button>
+		<button class="ui secondary button" [routerLink]="['/gadget','add']" [disabled]="isListFull">Add Gadget</button>
 	</div>
 </div>

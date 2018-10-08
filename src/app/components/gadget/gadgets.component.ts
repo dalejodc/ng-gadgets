@@ -13,6 +13,7 @@ export class GadgetsComponent implements OnInit {
 
 	gadgets: any[]=[];
 	budget: number=0;
+	isListFull: boolean = false;
 
 	constructor(
 		private _gadgetService:GadgetService,
@@ -34,7 +35,14 @@ export class GadgetsComponent implements OnInit {
 					h.key$ = key$; 
 					this.gadgets.push(data[key$]);
 				}
-				console.log(this.gadgets);
+				// console.log(this.gadgets);
+
+				if(this.gadgets.length<=4){
+					this.isListFull = false;
+				}else{
+					this.isListFull = true;
+				}
+
 				this.getBudget();
 
 			}, error=>{
