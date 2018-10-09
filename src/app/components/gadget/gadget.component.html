@@ -5,7 +5,7 @@
 	</div>
 </div>
 
-<div class="ui container animated fadeIn full-width-gadget">
+<div class="ui container animated fadeIn">
 	
 	<div class="ui right aligned grid">
 		<div class="right floated column">
@@ -111,11 +111,11 @@
 						<li *ngIf="desccription.errors?.required">This field is required</li>
 					</ul>
 				</div>
-				</div>
+			</div>
 			<br>
 			
 			<div class="ui right aligned grid">
-				<div class="right floated left aligned six wide column">
+				<div class="right floated right aligned  column">
 					<div class="ui button" tabindex="0" [routerLink]="['/gadgets']">Cancel</div>
 					<button class="ui button green" type="submit" [disabled]="!gadgetForm.valid">Submit</button>
 				</div>
@@ -137,11 +137,11 @@
 			</div>
 		</div> 
 	</div>
-
-	</div>
 </div>
-
+</div>
 <app-footer></app-footer>
+
+
 
 
 
