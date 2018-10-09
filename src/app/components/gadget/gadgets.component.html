@@ -67,6 +67,13 @@
 		</tbody>
 	</table>
 
+	<div class="ui message" *ngIf="gadgets.length ===0">
+		<div class="header">
+			Empty table.
+		</div>
+		<p>The table does not have data. Please add gadgets.</p>
+	</div>
+
 	<br>
 
 	<div class="ui large steps right">
