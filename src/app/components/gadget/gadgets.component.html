@@ -51,7 +51,7 @@
 				<th class="center aligned" width="250px">Options</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody *ngIf=!isLoading>
 
 			<tr *ngFor="let gadget of gadgets; let i = index">
 				<td width="50px" class="center aligned">{{i+1}}</td>
@@ -65,36 +65,45 @@
 				</td>
 			</tr>
 		</tbody>
+
 	</table>
 
-	<div class="ui message" *ngIf="gadgets.length ===0">
-		<div class="header">
-			Empty table.
+	<div class="ui segment" *ngIf=isLoading>
+		<div class="ui active inverted dimmer">
+			<div class="ui text loader">Loading data...</div>
 		</div>
-		<p>The table does not have data. Please add gadgets.</p>
+		<p></p>
 	</div>
 
-	<br>
 
-	<div class="ui large steps right" *ngIf="gadgets.length != 0">
-		<div class="step">
-			<i class="mobile alternate icon"></i>
-			<div class="content">
-				<div class="title">{{gadgets.length}}</div>
-				<div class="description">Total devices</div>
-			</div>
-		</div>
-		<div class="step">
-			<i class="dollar icon"></i>
-			<div class="content">
-				<div class="title">{{budget | currency}}</div>
-				<div class="description">Total sum of the devices</div>
-			</div>
+<div class="ui message" *ngIf="gadgets.length ===0 && !isLoading">
+	<div class="header">
+		Empty table.
+	</div>
+	<p>The table does not have data. Please add gadgets.</p>
+</div>
+
+<br>
+
+<div class="ui large steps right" *ngIf="gadgets.length != 0 && !isLoading">
+	<div class="step">
+		<i class="mobile alternate icon"></i>
+		<div class="content">
+			<div class="title">{{gadgets.length}}</div>
+			<div class="description">Total devices</div>
 		</div>
 	</div>
-	<br>
-	
-	<div class="ui divider"></div>
+	<div class="step">
+		<i class="dollar icon"></i>
+		<div class="content">
+			<div class="title">{{budget | currency}}</div>
+			<div class="description">Total sum of the devices</div>
+		</div>
+	</div>
+</div>
+<br>
+
+<div class="ui divider"></div>
 
 </div>
 <div class="ui stackable two column grid mar-top">

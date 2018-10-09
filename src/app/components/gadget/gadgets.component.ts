@@ -14,6 +14,7 @@ export class GadgetsComponent implements OnInit {
 	gadgets: any[]=[];
 	budget: number=0;
 	isListFull: boolean = false;
+	isLoading: boolean = true;
 
 	constructor(
 		private _gadgetService:GadgetService,
@@ -42,6 +43,8 @@ export class GadgetsComponent implements OnInit {
 				}else{
 					this.isListFull = true;
 				}
+
+				this.isLoading = false;
 
 				this.getBudget();
 
