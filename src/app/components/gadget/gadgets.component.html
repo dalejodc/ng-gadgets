@@ -21,6 +21,13 @@
 		</div>
 	</div>
 
+	<h1 class="ui header left aligned">
+		Gadgets
+		<div class="sub header">Make a wish list with your five favorites <span class="bold">gadgets</span>.</div>
+	</h1>
+
+	<br>
+
 	<div class="ui grid">
 		<div class="two column row">
 			<div class="left floated column">
@@ -76,34 +83,34 @@
 	</div>
 
 
-<div class="ui message" *ngIf="gadgets.length ===0 && !isLoading">
-	<div class="header">
-		Empty table.
+	<div class="ui message" *ngIf="gadgets.length ===0 && !isLoading">
+		<div class="header">
+			Empty table.
+		</div>
+		<p>The table does not have data. Please add gadgets.</p>
 	</div>
-	<p>The table does not have data. Please add gadgets.</p>
-</div>
 
-<br>
+	<br>
 
-<div class="ui large steps right" *ngIf="gadgets.length != 0 && !isLoading">
-	<div class="step">
-		<i class="mobile alternate icon"></i>
-		<div class="content">
-			<div class="title">{{gadgets.length}}</div>
-			<div class="description">Total devices</div>
+	<div class="ui large steps right" *ngIf="gadgets.length != 0 && !isLoading">
+		<div class="step">
+			<i class="mobile alternate icon"></i>
+			<div class="content">
+				<div class="title">{{gadgets.length}}</div>
+				<div class="description">Total devices</div>
+			</div>
+		</div>
+		<div class="step">
+			<i class="dollar icon"></i>
+			<div class="content">
+				<div class="title">{{budget | currency}}</div>
+				<div class="description">Total sum of the devices</div>
+			</div>
 		</div>
 	</div>
-	<div class="step">
-		<i class="dollar icon"></i>
-		<div class="content">
-			<div class="title">{{budget | currency}}</div>
-			<div class="description">Total sum of the devices</div>
-		</div>
-	</div>
-</div>
-<br>
+	<br>
 
-<div class="ui divider"></div>
+	<div class="ui divider"></div>
 
 </div>
 <div class="ui stackable two column grid mar-top">
