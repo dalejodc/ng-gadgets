@@ -44,7 +44,7 @@ testem.log
 Thumbs.db
 
 #Firebase
-.firebase/
+/.firebase
 .cache
 .firebase
 .firebaserc
