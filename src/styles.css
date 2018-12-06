@@ -24,6 +24,12 @@
 	margin-bottom: 60px;
 }
 
+#bars{
+	margin-left: 20px;
+	padding-top: 20px;
+	font-size: 25px;
+}
+
 .mar-top{
 	margin-top: 50px !important; 
 }
