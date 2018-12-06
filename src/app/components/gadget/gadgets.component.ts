@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
 
+declare var $: any
+
 import { GadgetService } from '../../services/gadget.service';
 import { Gadget } from '../../interfaces/gadget.interface';
 
@@ -97,6 +99,10 @@ export class GadgetsComponent implements OnInit {
 					});
 			}
 		});
+	}
+
+	toogle(){
+		$('.ui.sidebar').sidebar('toggle');
 	}
 
 }
