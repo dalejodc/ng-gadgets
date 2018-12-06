@@ -1,11 +1,11 @@
 <div class="ui sidebar inverted vertical menu">
-    <a class="item" (click)="navigate(home)">
+    <a class="item" (click)="navigate('home')">
       Home
     </a>
-    <a class="item">
+    <a class="item" (click)="navigate('gadgets')">
       Gadgets
     </a>
-    <a class="item">
+    <a class="item" (click)="navigate('gadget','add')">
       Add Gadget
     </a>
   </div>

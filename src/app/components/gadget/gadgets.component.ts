@@ -105,9 +105,16 @@ export class GadgetsComponent implements OnInit {
 		$('.ui.sidebar').sidebar('toggle');
 	}
 
-	navigate(route){
+	navigate(route, id?){
 		$('.ui.sidebar').sidebar('toggle');
-		this._router.navigate([`'/${route}'`]);
+		
+		if(id=='add'){
+			this._router.navigate(['/gadget', 'add']);
+		}else{
+			this._router.navigate([`'/${route}'`]);
+		} 
+
+		
 	}
 
 }
